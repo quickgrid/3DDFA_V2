@@ -46,7 +46,37 @@ git clone https://github.com/cleardusk/3DDFA_V2.git
 cd 3DDFA_V2
 ```
 
-2. Build the cython version of NMS, Sim3DR, and the faster mesh render
+2. **WINDOWS:**  Build the cython version of NMS, Sim3DR.
+
+Run the code below from conda environment with the required libraries installed.
+
+```shell script
+cd FaceBoxes/utils
+python3 build.py build_ext --inplace
+cd ..
+
+cd Sim3DR
+python setup.py build_ext --inplace
+cd ..
+```
+
+Following [this issue](https://github.com/cleardusk/3DDFA_V2/issues/12#issuecomment-697479173) change to these lines in `cpu_nms`,
+```
+cdef np.ndarray[np.int64_t, ndim=1] order = scores.argsort()[::-1]
+
+cdef int ndets = dets.shape[0]
+cdef np.ndarray[np.int64_t, ndim=1] suppressed = \
+        np.zeros((ndets), dtype=np.int64)
+```
+
+
+Also in `FaceBoxes/utils/build.py` change `ext_modules` as,
+```
+#extra_compile_args={'gcc': ["-Wno-cpp", "-Wno-unused-function"]},
+extra_compile_args=["-Wno-cpp", "-Wno-unused-function"],
+```
+
+2. **LINUX:**  Build the cython version of NMS, Sim3DR, and the faster mesh render
 <!-- ```shell script
 cd FaceBoxes
 sh ./build_cpu_nms.sh
