@@ -155,6 +155,12 @@ Only `obj` file can be imported to blender for now and importing `ply` for some 
 
 Following [this answer](https://blender.stackexchange.com/a/90913/91107) allows to have vertex colors for the obj file.
 
+**Bake UV Textures**
+
+Following [this tutorial](https://www.youtube.com/watch?v=7cphcAZ5ai8) will allow to have vertex color baked as uv texture. This works in cycles and light objects must be disabled via render settings in `scene collection`.
+
+In `Render Properties > Bake` only diffuse is required for bake type and direct, indirect contributions disabled.
+
 ### Features (up to now)
 
 
