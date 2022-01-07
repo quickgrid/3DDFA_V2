@@ -141,6 +141,20 @@ More results or demos to see: [Hathaway](https://guojianzhu.com/assets/videos/ha
 
 <!-- Obviously, the eyes parts are not good. -->
 
+### Generate and Import 3D Mesh to Blender
+
+Export commands:
+```
+python demo.py -f examples/inputs/emma.jpg -o obj
+python demo.py -f examples/inputs/emma.jpg -o ply
+```
+
+Only `obj` file can be imported to blender for now and importing `ply` for some reason gives index out of range error. The imported object will need be scaled down to view in blender viewport.  
+
+[Meshlab](https://github.com/cnr-isti-vclab/meshlab) is required to get vertex color as texture in blender. The `obj` or `ply` file from this repo first need to be imported to meshlab and from there exported as `ply`. Now importing the object and creating a new material then attaching vertex color node will show up with texture in viewport.
+
+Following [this answer](https://blender.stackexchange.com/a/90913/91107) allows to have vertex colors for the obj file.
+
 ### Features (up to now)
 
 
