@@ -123,6 +123,7 @@ For example, running `python3 demo.py -f examples/inputs/emma.jpg -o 3d` will gi
   <img src="docs/images/emma_3d.jpg" alt="demo" width="640px">
 </p>
 
+<!--
 Another example:
 
 <p align="center">
@@ -134,6 +135,7 @@ Running on a video will give:
 <p align="center">
   <img src="docs/images/out.gif" alt="demo" width="512px">
 </p>
+-->
 
 More results or demos to see: [Hathaway](https://guojianzhu.com/assets/videos/hathaway_3ddfa_v2.mp4).
 
